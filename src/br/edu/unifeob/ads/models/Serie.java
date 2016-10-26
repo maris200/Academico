@@ -1,5 +1,4 @@
 package br.edu.unifeob.ads.models;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,14 +24,6 @@ public class Serie {
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Modulo modulo;
 
-	public Modulo getModulo() {
-		return modulo;
-	}
-
-	public void setModulo(Modulo modulo) {
-		this.modulo = modulo;
-	}
-
 	public Long getIdSerie() {
 		return idSerie;
 	}
@@ -57,4 +48,13 @@ public class Serie {
 		this.turmas = turmas;
 	}
 
+	public Modulo getModulo() {
+		return modulo;
+	}
+
+	public void setModulo(Modulo modulo) {
+		this.modulo = modulo;
+	}
+
+	
 }

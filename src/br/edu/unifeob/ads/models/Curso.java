@@ -1,5 +1,4 @@
 package br.edu.unifeob.ads.models;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public class Curso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idCurso;
-
 	private String nome;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "Curso")
@@ -45,5 +43,7 @@ public class Curso {
 	public void setModulos(List<Modulo> modulos) {
 		this.modulos = modulos;
 	}
+
+	
 
 }

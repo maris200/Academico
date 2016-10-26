@@ -1,5 +1,4 @@
 package br.edu.unifeob.ads.models;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,18 +20,6 @@ public class Aluno {
 
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "aluno")
 	private List<Turma> turmas = new ArrayList<Turma>();
-
-	public Aluno() {
-
-	}
-
-	public List<Turma> getTurmas() {
-		return turmas;
-	}
-
-	public void setTurmas(List<Turma> turmas) {
-		this.turmas = turmas;
-	}
 
 	public Long getRa() {
 		return ra;
@@ -58,4 +45,14 @@ public class Aluno {
 		this.senha = senha;
 	}
 
+	public List<Turma> getTurmas() {
+		return turmas;
+	}
+
+	public void setTurmas(List<Turma> turmas) {
+		this.turmas = turmas;
+	}
+
+	
+	
 }

@@ -26,14 +26,6 @@ public class Modulo {
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Curso curso;
 
-	public Curso getCurso() {
-		return curso;
-	}
-
-	public void setCurso(Curso curso) {
-		this.curso = curso;
-	}
-
 	public Long getIdModulo() {
 		return idModulo;
 	}
@@ -58,4 +50,13 @@ public class Modulo {
 		this.series = series;
 	}
 
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
+	
 }

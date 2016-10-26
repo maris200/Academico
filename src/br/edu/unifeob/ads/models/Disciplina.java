@@ -22,9 +22,9 @@ public class Disciplina {
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "disciplina")
 	private List<Turma> turmas = new ArrayList<Turma>();
 
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "disciplina")
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Professor> professores = new ArrayList<Professor>();
-	
+
 	public Long getIdDisciplina() {
 		return idDisciplina;
 	}
@@ -49,4 +49,13 @@ public class Disciplina {
 		this.turmas = turmas;
 	}
 
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
+	}
+	
+	
 }

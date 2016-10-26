@@ -18,7 +18,7 @@ public class Professor {
 	private Long idProf;
 	private String nome;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "professor")
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public Long getIdProf() {
@@ -44,6 +44,6 @@ public class Professor {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	
+
 	
 }
