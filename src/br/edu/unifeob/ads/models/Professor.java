@@ -10,12 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Professor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idProf;
+	
+	@NotEmpty
 	private String nome;
 	
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "professor")

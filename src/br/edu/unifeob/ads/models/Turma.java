@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Turma {
 
@@ -18,11 +20,12 @@ public class Turma {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idTurma;
 
+	@NotEmpty
 	private String nome;
 
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Aluno> alunos = new ArrayList<Aluno>();
+	private List<Professor> alunos = new ArrayList<Professor>();
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
@@ -46,11 +49,11 @@ public class Turma {
 		this.nome = nome;
 	}
 
-	public List<Aluno> getAlunos() {
+	public List<Professor> getAlunos() {
 		return alunos;
 	}
 
-	public void setAlunos(List<Aluno> alunos) {
+	public void setAlunos(List<Professor> alunos) {
 		this.alunos = alunos;
 	}
 

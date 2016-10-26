@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Disciplina {
 
@@ -17,6 +19,7 @@ public class Disciplina {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idDisciplina;
 
+	@NotEmpty
 	private String nome;
 
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "disciplina")

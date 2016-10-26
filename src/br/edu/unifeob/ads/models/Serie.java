@@ -10,12 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Serie {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idSerie;
+	
+	@NotEmpty
 	private String nome;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "Serie")

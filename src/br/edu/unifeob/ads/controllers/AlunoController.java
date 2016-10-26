@@ -1,24 +1,18 @@
 package br.edu.unifeob.ads.controllers;
 
 import javax.inject.Inject;
-
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Result;
+import br.edu.unifeob.ads.dao.AlunoDAO;
+import br.edu.unifeob.ads.models.Aluno;
 
 @Controller
 public class AlunoController {
 
-
-		private Result result;
-		private AlunoController alunoController;
-
-		public AlunoController(){		
-		}
-		
-		@Inject
-		public AlunoController(Result result, AlunoController alunoController) {		
-			this.result = result;
-			this.alunoController = alunoController;
-		}
+	@Inject
+	private AlunoDAO alunoDao;
+	
+	public void salvar(Aluno aluno) {
+		alunoDao.salvar(aluno);
+    }
 
 }

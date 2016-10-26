@@ -9,12 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Curso {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idCurso;
+	
+	@NotEmpty
 	private String nome;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "Curso")

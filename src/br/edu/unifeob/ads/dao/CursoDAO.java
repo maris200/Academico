@@ -5,19 +5,17 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import br.edu.unifeob.ads.models.Curso;
 
+
 @Dependent
 public class CursoDAO {
 	
-private EntityManager entityManager;
-	
 	@Inject
-	public CursoDAO(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
+    private EntityManager manager;
 	
-	public void salvar(Curso curso){
-		entityManager.persist(curso);
-	}
+	
+	public void salvar(Curso curso) {
+        manager.persist(curso);
+    }
 	
 
 }
