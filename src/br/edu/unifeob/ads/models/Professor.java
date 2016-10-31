@@ -16,14 +16,22 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Professor {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProf;
 	
 	@NotEmpty
 	private String nome;
 	
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "professor")
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "professores")
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
+
+	public Professor() {
+	}
+
+	public Professor(String nome) {
+		this.nome = nome;
+	}
 
 	public Long getIdProf() {
 		return idProf;

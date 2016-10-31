@@ -17,17 +17,25 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Modulo {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idModulo;
 
 	@NotEmpty
 	private String nome;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "Modulo")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "modulo")
 	private List<Serie> series = new ArrayList<Serie>();
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Curso curso;
+		
+	public Modulo() {
+	}
+
+	public Modulo(String nome, Curso curso) {
+		this.nome = nome;
+		this.curso = curso;
+	}
 
 	public Long getIdModulo() {
 		return idModulo;

@@ -16,17 +16,25 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Serie {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idSerie;
 	
 	@NotEmpty
 	private String nome;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "Serie")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "serie")
 	private List<Turma> turmas = new ArrayList<Turma>();
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Modulo modulo;
+		
+	public Serie() {
+	}
+
+	public Serie(String nome, Modulo modulo) {
+		this.nome = nome;
+		this.modulo = modulo;
+	}
 
 	public Long getIdSerie() {
 		return idSerie;

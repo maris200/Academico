@@ -15,7 +15,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Aluno {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long ra;
 	
 	@NotEmpty
@@ -24,8 +24,17 @@ public class Aluno {
 	@NotEmpty
 	private String senha;
 
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "aluno")
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "alunos")
 	private List<Turma> turmas = new ArrayList<Turma>();
+	
+	
+	public Aluno() {		
+	}
+
+	public Aluno(String nome, String senha) {
+		this.nome = nome;
+		this.senha = senha;
+	}
 
 	public Long getRa() {
 		return ra;
