@@ -1,10 +1,14 @@
 package br.edu.unifeob.ads.controllers;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
+import br.edu.unifeob.ads.dao.AlunoDAO;
 import br.edu.unifeob.ads.dao.TurmaDAO;
 import br.edu.unifeob.ads.models.Aluno;
 import br.edu.unifeob.ads.models.Curso;
@@ -18,7 +22,10 @@ import br.edu.unifeob.ads.models.Turma;
 public class GerarDadosController {
 	
 	@Inject
-	TurmaDAO TurmaDAO;
+	TurmaDAO turmaDAO;
+	
+	@Inject
+	AlunoDAO alunoDAO;
 	
 	@Get
 	@Path("/gerardados")
@@ -39,7 +46,7 @@ public class GerarDadosController {
 		ltpIV.getProfessores().add(anderson);
 		ltpIV.getProfessores().add(joao);
 		
-		TurmaDAO.salvar(turmaA);
+		turmaDAO.salvar(turmaA);
 		
 	}
 
