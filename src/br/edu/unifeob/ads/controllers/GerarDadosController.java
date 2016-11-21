@@ -1,8 +1,5 @@
 package br.edu.unifeob.ads.controllers;
 
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
-
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
